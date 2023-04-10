@@ -1,7 +1,7 @@
 # mbart_qg
 use mbart model to train a chinese question generating model
 
-# download training data
+## download training data
 download train data from [Delta Reading Comprehension Dataset](https://github.com/DRCKnowledgeTeam/DRCD) and put in drcd dir
 ```
 mbart_qg
@@ -13,10 +13,10 @@ mbart_qg
 │   config.py
 │   ...
 ```
-# set training parameters
+## set training parameters
 set Hyperparameter in config.py
 
-# training
+## training
 run
 >python train.py
 
@@ -24,13 +24,13 @@ train.py will read data from DRCD_dev.json and DRCD_training.json
 and concatenate the context and answer into model input
 label is the question in dataset.
 
-# inference
+## inference
 run
 >python predict.py
 
 then input context and question
 
-# Evaluation
+## Evaluation
 run
 >python rouge_test.py
 
