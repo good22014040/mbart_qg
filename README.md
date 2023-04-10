@@ -30,6 +30,7 @@ the model for every epoch will save in "model" folder
 run
 >python predict.py
 
+predict.py will load the "best_model" set in 
 then input context and question
 
 ## Evaluation
