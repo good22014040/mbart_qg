@@ -16,7 +16,7 @@ tokenizer = MBart50TokenizerFast.from_pretrained("facebook/mbart-large-50", src_
 
 
 model_path = best_model
-test_dataset = get_dataset('drcd/DRCD_test.json', tokenizer)
+test_dataset = get_dataset('DRCD/DRCD_test.json', tokenizer)
 test_dataloader = DataLoader(test_dataset, shuffle=True, batch_size=30)
 model = MBartForConditionalGeneration.from_pretrained(model_path).to(device)
 
