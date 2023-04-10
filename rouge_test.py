@@ -15,7 +15,7 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 tokenizer = MBart50TokenizerFast.from_pretrained("facebook/mbart-large-50", src_lang="zh_CN", tgt_lang="zh_CN")
 
 
-model_path = "model_size_16/epoch_3_train_loss=0.1130604538561061_eval_loss=0.21756762835629512"
+model_path = best_model
 test_dataset = get_dataset('drcd/DRCD_test.json', tokenizer)
 test_dataloader = DataLoader(test_dataset, shuffle=True, batch_size=30)
 model = MBartForConditionalGeneration.from_pretrained(model_path).to(device)
