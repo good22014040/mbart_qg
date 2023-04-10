@@ -15,8 +15,8 @@ from get_optimizer import *
 
 tokenizer = MBart50TokenizerFast.from_pretrained("facebook/mbart-large-50", src_lang="zh_CN", tgt_lang="zh_CN")
 
-train_dataset = get_dataset('drcd/train.json', tokenizer)
-eval_dataset = get_dataset('drcd/dev.json', tokenizer)
+train_dataset = get_dataset('drcd/DRCD_training.json', tokenizer)
+eval_dataset = get_dataset('drcd/DRCD_test.json', tokenizer)
 
 train_dataloader = DataLoader(train_dataset, shuffle=True, batch_size=train_batch_size)
 eval_dataloader = DataLoader(eval_dataset, batch_size=eval_batch_size)
