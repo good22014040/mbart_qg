@@ -1,5 +1,4 @@
 accelerate==0.15.0
-jieba==0.42.1
 rouge==1.0.1
 sentencepiece==0.1.97
 torch==1.12.1+cu116
