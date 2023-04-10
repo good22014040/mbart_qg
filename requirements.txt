@@ -1,0 +1,7 @@
+accelerate==0.15.0
+jieba==0.42.1
+rouge==1.0.1
+sentencepiece==0.1.97
+torch @ https://download.pytorch.org/whl/cu116/torch-1.12.1%2Bcu116-cp38-cp38-linux_x86_64.whl
+torchvision==0.13.1
+transformers==4.27.3
