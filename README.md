@@ -1,6 +1,7 @@
 # mbart_qg
 use mbart model to train a chinese question generating model
-
+## install requirements.txt
+>pip install -r requirements.txt
 ## download training data
 download train data from [Delta Reading Comprehension Dataset](https://github.com/DRCKnowledgeTeam/DRCD) and put the json files in "drcd" folder
 ```
