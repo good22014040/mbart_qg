@@ -8,6 +8,7 @@ from transformers import (
     MBartForConditionalGeneration, 
     MBart50TokenizerFast
 )
+import os
 
 from get_dataset import *
 from config import *
@@ -15,8 +16,8 @@ from get_optimizer import *
 
 tokenizer = MBart50TokenizerFast.from_pretrained("facebook/mbart-large-50", src_lang="zh_CN", tgt_lang="zh_CN")
 
-train_dataset = get_dataset('drcd/DRCD_training.json', tokenizer)
-eval_dataset = get_dataset('drcd/DRCD_test.json', tokenizer)
+train_dataset = get_dataset('drcd/DRCD_training.json', tokenizer, num_limit = train_data_num)
+eval_dataset = get_dataset('drcd/DRCD_test.json', tokenizer, num_limit = eval_data_num)
 
 train_dataloader = DataLoader(train_dataset, shuffle=True, batch_size=train_batch_size)
 eval_dataloader = DataLoader(eval_dataset, batch_size=eval_batch_size)
@@ -43,6 +44,8 @@ model, optimizer, train_dataloader, eval_dataloader = accelerator.prepare(
 
 # Train!
 output_dir = 'model/'
+if not os.path.isdir(output_dir):
+    os.mkdir(output_dir)
 
 total_batch_size = train_batch_size * accelerator.num_processes * gradient_accumulation_steps
 completed_steps = 0
