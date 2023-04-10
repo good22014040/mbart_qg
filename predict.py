@@ -1,5 +1,6 @@
 from transformers import MBartForConditionalGeneration, MBart50TokenizerFast
 import torch
+from config import best_model
 
 device = torch.device("cuda:1" if torch.cuda.is_available() else "cpu")
 def predict(context, answer, model, tokenizer):
@@ -22,8 +23,7 @@ def predict(context, answer, model, tokenizer):
         
         print(tokenizer.decode(outputs[0], skip_special_tokens=True))
 
-model_path = "model_size_16/epoch_3_train_loss=0.1130604538561061_eval_loss=0.21756762835629512"
-model = MBartForConditionalGeneration.from_pretrained(model_path).to(device)
+model = MBartForConditionalGeneration.from_pretrained(best_model).to(device)
 tokenizer = MBart50TokenizerFast.from_pretrained("facebook/mbart-large-50", src_lang="en_XX", tgt_lang="en_XX")
 
 while(True):
