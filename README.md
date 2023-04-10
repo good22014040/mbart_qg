@@ -5,7 +5,7 @@ use mbart model to train a chinese question generating model
 download train data from [Delta Reading Comprehension Dataset](https://github.com/DRCKnowledgeTeam/DRCD) and put the json files in "drcd" folder
 ```
 mbart_qg
-│───drcd
+│───DRCD
 │   │   DRCD_dev.json
 │   │   DRCD_test.json
 │   │   DRCD_training.json
