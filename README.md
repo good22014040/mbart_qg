@@ -2,7 +2,7 @@
 use mbart model to train a chinese question generating model
 
 ## download training data
-download train data from [Delta Reading Comprehension Dataset](https://github.com/DRCKnowledgeTeam/DRCD) and put in drcd dir
+download train data from [Delta Reading Comprehension Dataset](https://github.com/DRCKnowledgeTeam/DRCD) and put the json files in "drcd" folder
 ```
 mbart_qg
 │───drcd
@@ -23,6 +23,7 @@ run
 train.py will read data from DRCD_dev.json and DRCD_training.json
 and concatenate the context and answer into model input
 label is the question in dataset.
+the model for every epoch will save in "model" folder
 
 ## inference
 run
