@@ -13,7 +13,7 @@ mbart_qg
 │   config.py
 │   ...
 ```
-# training parameters set
+# set training parameters
 set Hyperparameter in config.py
 
 # training
